@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Polymatters</title>
+        <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+
+        <style>
+            body {
+                margin: 0;
+                height: 100vh;
+                overflow: hidden;
+                display: grid;
+                place-items: center;
+            }
+
+            #bgCanvas {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            h1 {
+                z-index: 3;
+                pointer-events: none;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>
+                <h1>Polymatters is a record label for live code music.</h1>
+
+        <canvas id="bgCanvas"></canvas>
+
+        <script type="application/processing" data-processing-target="bgCanvas">
+            void setup() {
+                size(window.innerWidth, window.innerHeight);
+                smooth();
+                background(255)
+            }
+
+            void draw() {                
+                noStroke()
+                fill(0,0,255);
+                ellipse(mouseX, mouseY, 50, 50);
+            }
+
+            // Make canvas resize with window
+            void windowResized() {
+                size(window.innerWidth, window.innerHeight);
+            }
+        </script>
+
+    </body>
+</html>
